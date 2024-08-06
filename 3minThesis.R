@@ -15,7 +15,7 @@ data$formatted_date <- as.POSIXct(data$formatted_date, format="%Y-%m-%d %H:%M", 
 data <- data[!is.na(data$formatted_date), ]
 data <- data[!duplicated(data[c("ID", "formatted_date")]), ]
 
-socks <- subset(data, ID == "UOM2002")
+socks <- subset(data, ID == "UOM2008")
 
 dm <- move(x=socks$Longitude, y=socks$Latitude, time=socks$formatted_date, proj=CRS("+proj=longlat +ellps=WGS84"),animal = socks$ID, removeDuplicatedTimestamps = TRUE)
 
